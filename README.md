@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Mini Support Desk 🛠️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application to manage internal support tickets with role-based access for Users and Admins.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Objective
 
-### `npm start`
+Build a small support desk system where:
+- Users can raise and track their own tickets
+- Admins can manage, assign, and resolve tickets
+- Communication happens via ticket comments
+- Basic analytics are shown on a dashboard
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 👥 User Roles
 
-### `npm test`
+### 🔹 User
+- Register and login
+- Create support tickets
+- View only their own tickets
+- Edit tickets only when status is **OPEN**
+- Comment on their own tickets
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔹 Admin
+- Login as admin
+- View all tickets
+- Update ticket status & priority
+- Assign / unassign tickets
+- Comment on any ticket
+- View dashboard metrics
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎫 Ticket Lifecycle
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Each ticket contains:
+- **Title**
+- **Description**
+- **Status**: `OPEN`, `IN_PROGRESS`, `RESOLVED`, `CLOSED`
+- **Priority**: `LOW`, `MEDIUM`, `HIGH`
+- **Assigned Admin**
+- **Comments (conversation thread)**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🔍 Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Authentication & Authorization
+- JWT-based authentication
+- Role-based access enforced in backend (Spring Security)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Ticket Management
+- Create, update, assign, and track tickets
+- Role-based access rules
+- Status & priority management
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Comments
+- Threaded comments per ticket
+- User → own tickets only
+- Admin → all tickets
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Listing & Search
+- Pagination
+- Sorting
+- Filters (Status, Priority)
 
-## Learn More
+### Dashboard Metrics
+- Total tickets
+- Open vs Resolved tickets
+- Tickets created today / this week
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🧱 Tech Stack
 
-### Code Splitting
+### Backend
+- Java 17
+- Spring Boot
+- Spring Security + JWT
+- JPA / Hibernate
+- MySQL (can be switched to H2)
+- Maven
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Frontend
+- React.js
+- Axios
+- React Router
+- Basic responsive UI
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📁 Project Structure
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
